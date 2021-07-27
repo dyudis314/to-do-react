@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form = ({ setInputText }) => {
+const Form = ({ inputText, setInputText, todos, setTodos }) => {
     // Here I can write Javascript code and functions
     const inputTextHandler = (e) => {
         console.log(e.target.value);
@@ -8,11 +8,17 @@ const Form = ({ setInputText }) => {
     };
     const submitTodoHandler = (e) => {
         e.preventDefault();
+        // When you click, this function is called. This function sets the setTodos state by incidentally creating an object containing 3 properties (text, completed, id)
+        setTodos([
+          ...todos, 
+          { text: inputText, completed: false, id: Math.random() * 1000 },
+        ]);
+        setInputText("");
     };
 
     return (
         <form>
-        <input onChange = {inputTextHandler} type="text" className="todo-input" />
+        <input onChange={inputTextHandler} type="text" className="todo-input" value={inputText} />
         <button onClick={submitTodoHandler} className="todo-button" type="submit">
           <i className="fas fa-plus-square"></i>
         </button>
