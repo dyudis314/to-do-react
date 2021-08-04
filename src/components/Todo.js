@@ -3,10 +3,12 @@ import React from 'react';
 const Todo = ({text, todo, todos, setTodos}) => {
      // Events
      const deleteHandler = () => {
-       setTodos(todos.filter((el) => el.id !== todos.id));
+      setTodos(todos.filter((el) => el.id !== todos.id))
+      //console.log(todo.id)
     };
     
     const completeHandler = () => {
+       // console.log(todo);
         setTodos(todos.map(item => {
             if (item.id === todo.id) {
                 return {
@@ -31,3 +33,6 @@ const Todo = ({text, todo, todos, setTodos}) => {
 }
 
 export default Todo;
+
+/* Line 24 breakdown: this list element has a regular classname of "todo-item". We want to dynamically toggle another classname when the user clicks the button. 
+So we wrap everything in a function that handles this toggle. If todo.completed property then it toggles to "completed" class. Vice versa. */
