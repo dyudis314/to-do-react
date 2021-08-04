@@ -11,6 +11,7 @@ function App() {
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
 
+
    // Use Effect
    useEffect(() => {
     filterHandler();

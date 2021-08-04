@@ -3,12 +3,14 @@ import React from 'react';
 const Todo = ({text, todo, todos, setTodos}) => {
      // Events
      const deleteHandler = () => {
-      setTodos(todos.filter((el) => el.id !== todos.id))
-      //console.log(todo.id)
+      setTodos(todos.filter((el) =>
+       el.id !== todo.id));
     };
+
+    // Filter KEEPS items NOT REMOVES. So the above logic states that all items will be kept 
     
     const completeHandler = () => {
-       // console.log(todo);
+       console.log(todo);
         setTodos(todos.map(item => {
             if (item.id === todo.id) {
                 return {
