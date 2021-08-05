@@ -5,9 +5,11 @@ const Todo = ({text, todo, todos, setTodos}) => {
      const deleteHandler = () => {
       setTodos(todos.filter((el) =>
        el.id !== todo.id));
+        const list = todo;
+        console.log(list);
     };
 
-    // Filter KEEPS items NOT REMOVES. So the above logic states that all items will be kept 
+    // Filter keeps items that meet the criteria you give it
     
     const completeHandler = () => {
        console.log(todo);
