@@ -9,7 +9,7 @@ const Todo = ({text, todo, todos, setTodos}) => {
         console.log(list);
     };
 
-    // Filter keeps items that meet the criteria you give it
+    // Filter keeps items that meet the criteria you give it. UI and state always the same. So the ids are always the same. You're running what you already know to get rid of what you don't want.
     
     const completeHandler = () => {
        console.log(todo);
