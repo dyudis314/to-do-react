@@ -15,6 +15,7 @@ function App() {
    // Use Effect
    useEffect(() => {
     filterHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [todos, status]); // Basically, you've created a function that runs everytime you change the state of whatever piece of state you wants to change (ex --> [todos, status, etc])
 
   //Functions
